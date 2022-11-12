@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page to display IP</title>
+        <style>
+            body{
+                background-image: url("https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+            }
+            .div{
+                font-size: 25px;
+                align-items: center;
+                align-content: center;
+                background-color: aqua;
+                text-align: center;
+                opacity: 0.8;
+            }
+            h1{
+                align-self: center;
+            }
+            pre{
+                align-items: center;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div">
+            <pre id="par">
+		<?php  print '/usr/sbin/ifconfig'; ?>
+            </pre>
+        </div>
+    <!--    <script type="text/javascript"> 
+            var ip = location.host;
+            var para = document.getElementById("par");
+            para.innerText = ip;
+    </script> -->
+
+    </body>    
+</html>
