@@ -1,0 +1,18 @@
+[mylb]
+3.111.34.32 ansible_user=ec2-user ansible_ssh_private_key=/root/lb/test.pem ansible_connection=ssh
+
+[myweb]
+
+#  ansible_ssh_user=root  ansible_connection=ssh  ansible_password=ritesh
+#65.2.73.212  ansible_user=ec2-user ansible_ssh_private_key=/root/lb/test.pem ansible_connection=ssh
+
+#65.2.57.215  ansible_user=ec2-user ansible_ssh_private_key=/root/lb/test.pem ansible_connection=ssh
+#13.235.76.69  ansible_user=ec2-user ansible_ssh_private_key=/root/lb/test.pem ansible_connection=ssh
+
+13.234.145.255  ansible_user=root ansible_ssh_pass=Ritesh ansible_connection=ssh
+13.235.76.69:22 ansible_user=root ansible_ssh_pass=Ritesh ansible_connection=ssh
+
+[myweb2]
+15.207.223.170  ansible_user=ec2-user ansible_ssh_private_key=/root/lb/test.pem ansible_connection=ssh
+
+

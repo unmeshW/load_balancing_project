@@ -1,0 +1,87 @@
+- hosts: myweb
+  tasks:
+          - name: "Install packages"
+            package:
+                    name: "httpd"
+                    state: present
+          - name: "Install packages"
+            package:
+                    name: "php"
+                    state: present
+          - name: "copy the content"
+            copy:
+                    src: "/root/lb/ip2.php"
+                    dest: "/var/www/html/"
+
+          - name: "copy content"
+            copy: 
+                    src: "/root/lb/app3.html"
+                    dest: "/var/www/html/"
+                    # - name: run command
+                    # command: "yum install git -y"
+                    
+         # - name: "Deploying Code from GitHub"
+         # get_url:
+         #url: "https://raw.githubusercontent.com/unmeshW/quiz-website/main/css/style.css"
+         #dest: "/var/www/html/style.css"
+
+
+          - name: "Start the service"
+            service:
+                    name: "httpd"
+                    state: started
+
+- hosts: myweb
+  tasks:
+          - name: "Install packages"
+            package:
+                    name: "httpd"
+                    state: present
+          - name: "Install packages"
+            package:
+                    name: "php"
+                    state: present
+          - name: "copy the content"
+            copy:
+                    src: "/root/lb/ip2.php"
+                    dest: "/var/www/html/"
+
+          - name: "copy content"
+            copy: 
+                    src: "/root/lb/app3.html"
+                    dest: "/var/www/html"
+                    # - name: run command
+                    # command: "yum install git -y"
+
+                    # - name: "Deploying Code from GitHub"
+                    # get_url:
+                   #url: "https://raw.githubusercontent.com/unmeshW/quiz-website/main/css/style.css"
+                   #dest: "/var/www/html/style.css"
+
+          - name: "Start the service"
+            service:
+                    name: "httpd"
+                    state: started
+
+
+
+
+
+- hosts: mylb
+  tasks:
+          - name: "to instal haproxy"
+            package:
+                    name: "haproxy"
+                    state: present
+
+
+          - name: "copy conf file to lb"
+            template:
+                    src: "/root/lb/haproxy1.cfg"
+                    dest: "/etc/haproxy/"
+            
+
+          - name: " to start the service"
+            service:
+                    name: "haproxy"
+                    state: restarted
